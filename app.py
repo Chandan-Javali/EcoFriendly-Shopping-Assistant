@@ -1,36 +1,57 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
-from fuzzywuzzy import process  # Ensure this is installed
+from fuzzywuzzy import process
 
-# Streamlit page setup (This must be the first Streamlit command)
-st.set_page_config(page_title="EcoShop AI - Sustainable Shopping Assistant")
+# Streamlit page setup
+st.set_page_config(page_title="EcoShop AI - Sustainable Shopping Assistant", layout="wide")
 
-# Load the product data from the CSV file
+# Custom HTML & CSS for better UI
+def set_page_style():
+    st.markdown(
+        """
+        <style>
+        body { background-color: #121212; color: white; }
+        .stTextInput>div>div>input { color: white; background-color: #333; }
+        .stDataFrame { background-color: #222; color: white; }
+        .stButton>button { background-color: #28a745; color: white; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+set_page_style()
+
+# Load product data
 df = pd.read_csv('products.csv')
 df['product_name'] = df['product_name'].str.strip().str.lower()
 
-# App title and description
-st.title("🌱 EcoShop AI - Sustainable Shopping Assistant")
+# Title
+st.markdown("""
+    <h1 style='text-align: center;'>🌱 EcoShop AI - Sustainable Shopping Assistant</h1>
+""", unsafe_allow_html=True)
 
-# User input for product search
+# User input
 product_name = st.text_input("Enter a product name:")
 
 if product_name:
-    # Ensure case and whitespace consistency
     product_name = product_name.strip().lower()
-
-    # Find the best match for the input
     result = process.extractOne(product_name, df['product_name'])
-
-    if result:
-        best_match, score = result[0], result[1]
-        if score > 80:
-            product_data = df[df['product_name'] == best_match]
-            st.write("Best match:", best_match)
-            st.dataframe(product_data)
-        else:
-            st.write("No close match found.")
+    
+    if result and result[1] > 80:
+        best_match = result[0]
+        product_data = df[df['product_name'] == best_match]
+        st.subheader(f"Best Match: {best_match.capitalize()}")
+        st.dataframe(product_data)
+        
+        # Sustainability Score Chart
+        if 'material_score' in product_data and 'carbon_footprint' in product_data:
+            fig = px.bar(
+                product_data.melt(id_vars=['product_name'], value_vars=['material_score', 'carbon_footprint']),
+                x='variable', y='value', color='variable',
+                title=f"Sustainability Scores for {best_match.capitalize()}",
+                text_auto=True
+            )
+            st.plotly_chart(fig, use_container_width=True)
     else:
-        st.write("No matches found.")
-
+        st.error("No close match found. Try a different term.")
