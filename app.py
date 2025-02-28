@@ -1,52 +1,70 @@
-import streamlit as st
-import pandas as pd
-from fuzzywuzzy import process
-
-# Page Config
-st.set_page_config(page_title="EcoShop AI", layout="wide")
-
-# Load Product Data
-@st.cache_data
-def load_data():
-    df = pd.read_csv("products.csv")
-    df["product_name"] = df["product_name"].str.strip().str.lower()
-    return df
-
-df = load_data()
-
-# Custom CSS for styling
-st.markdown("""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoShop AI - Sustainable Shopping Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        body { background-color: #121212; color: white; font-family: Arial, sans-serif; }
+        body { background-color: #121212; color: white; }
         .search-container { margin: 50px auto; max-width: 600px; }
-        .search-box { width: 100%; padding: 10px; border-radius: 5px; background: #1e1e1e; color: white; border: 1px solid #444; }
-        .search-box::placeholder { color: #bbb; }
-        .result-card { background: #1e1e1e; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: left; }
+        .result-card { background: #1e1e1e; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .eco-score { font-size: 1.5rem; font-weight: bold; }
     </style>
-""", unsafe_allow_html=True)
-
-# UI - Title
-st.markdown("<h1 style='text-align: center;'>🌱 EcoShop AI - Sustainable Shopping Assistant</h1>", unsafe_allow_html=True)
-
-# Search Box
-product_name = st.text_input("Enter a product name:", "").strip().lower()
-
-if product_name:
-    best_match = process.extractOne(product_name, df["product_name"])
-
-    if best_match and best_match[1] > 75:
-        matched_product = df[df["product_name"] == best_match[0]].iloc[0]
-        
-        # Display product details
-        st.markdown(f"""
-            <div class='result-card'>
-                <h2>{matched_product["product_name"].capitalize()}</h2>
-                <p><strong>Material Score:</strong> {matched_product["material_score"]}</p>
-                <p><strong>Carbon Footprint:</strong> {matched_product["carbon_footprint"]}</p>
-                <p><strong>Packaging:</strong> {matched_product["packaging"]}</p>
-                <p><strong>Tip:</strong> {matched_product["tips"]}</p>
-            </div>
-        """, unsafe_allow_html=True)
-    else:
-        st.warning("No close match found. Try another search term.")
-
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mt-4">🌱 EcoShop AI - Sustainable Shopping Assistant</h1>
+        <div class="search-container">
+            <input type="text" id="searchBox" class="form-control" placeholder="Search for a product...">
+            <div id="suggestions" class="list-group mt-2"></div>
+        </div>
+        <div id="productResults" class="mt-4"></div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            let productData = [];
+            
+            $.getJSON("products.json", function(data) {
+                productData = data;
+            });
+            
+            $("#searchBox").on("input", function() {
+                let query = $(this).val().toLowerCase();
+                let matches = productData.filter(p => p.product_name.includes(query));
+                $("#suggestions").empty();
+                
+                matches.slice(0, 5).forEach(m => {
+                    $("#suggestions").append(`<button class='list-group-item list-group-item-action' onclick='showProduct("${m.product_name}")'>${m.product_name}</button>`);
+                });
+            });
+            
+            window.showProduct = function(name) {
+                let product = productData.find(p => p.product_name === name);
+                if (product) {
+                    let ecoScore = Math.round((product.material_score + (10 - product.carbon_footprint) + product.packaging) / 3);
+                    
+                    let tip = "";
+                    if (ecoScore >= 8) tip = "This is a highly sustainable choice!";
+                    else if (ecoScore >= 5) tip = "Consider eco-certified alternatives for better sustainability.";
+                    else tip = "This product has a high environmental impact. Look for greener options.";
+                    
+                    $("#productResults").html(`
+                        <div class='result-card'>
+                            <h3>${product.product_name}</h3>
+                            <p class='eco-score'>Eco Score: ${ecoScore}/10</p>
+                            <p><strong>Material Score:</strong> ${product.material_score}</p>
+                            <p><strong>Carbon Footprint:</strong> ${product.carbon_footprint}</p>
+                            <p><strong>Packaging:</strong> ${product.packaging}</p>
+                            <p><strong>Tip:</strong> ${tip}</p>
+                        </div>
+                    `);
+                }
+                $("#suggestions").empty();
+            };
+        });
+    </script>
+</body>
+</html>
