@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+from fuzzywuzzy import process
 
 # Load the product data from the CSV file
 df = pd.read_csv('products.csv')
@@ -18,8 +19,15 @@ st.markdown("### Check the eco-friendliness of a product based on its sustainabi
 # Input field for product name
 product_name = st.text_input("Enter product name:").strip().lower()
 
-# Search for the product in the CSV
-product_data = df[df['product_name'] == product_name]
+if product_name:
+    # Find the best match for the input
+    best_match, score = process.extractOne(product_name, df['product_name'])
+    if score > 80:
+        product_data = df[df['product_name'] == best_match]
+    else:
+        product_data = pd.DataFrame()
+else:
+    product_data = pd.DataFrame()
 
 if not product_data.empty:
     # Extract the relevant information for the selected product
@@ -46,7 +54,7 @@ if not product_data.empty:
         theta=["Material", "Carbon Footprint", "Packaging", "Material"],
         line_close=True,
         markers=True,
-        title=f"{product_name.capitalize()} Eco-Friendliness Breakdown",
+        title=f"{best_match.capitalize()} Eco-Friendliness Breakdown",
     )
     fig.update_traces(fill='toself', line=dict(color=eco_colors[eco_rating]))
     fig.update_layout(polar=dict(radialaxis=dict(visible=True, range=[1, 10])))
