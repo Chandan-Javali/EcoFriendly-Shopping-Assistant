@@ -12,6 +12,19 @@ df['product_name'] = df['product_name'].str.strip().str.lower()
 # Streamlit page setup
 st.set_page_config(page_title="EcoShop AI - Sustainable Shopping Assistant", layout="centered")
 
+import pandas as pd
+import streamlit as st
+import plotly.express as px
+
+# Load the product data from the CSV file
+df = pd.read_csv('products.csv')
+
+# Ensure product names are stripped of whitespace and case-insensitive
+df['product_name'] = df['product_name'].str.strip().str.lower()
+
+# Streamlit page setup
+st.set_page_config(page_title="EcoShop AI - Sustainable Shopping Assistant", layout="centered")
+
 # App title and description
 st.title("\U0001F331 EcoShop AI - Sustainable Shopping Assistant")
 st.markdown("### Check the eco-friendliness of a product based on its sustainability factors.")
@@ -20,21 +33,21 @@ st.markdown("### Check the eco-friendliness of a product based on its sustainabi
 product_name = st.text_input("Enter product name:").strip().lower()
 
 if product_name:
-    # Find the best match for the input
-    best_match, score = process.extractOne(product_name, df['product_name'])
-    if score > 80:
-        product_data = df[df['product_name'] == best_match]
+    # Perform case-insensitive search using Pandas' .str.contains()
+    matched_products = df[df['product_name'].str.contains(product_name, case=False, na=False)]
+    if not matched_products.empty:
+        product_data = matched_products.iloc[0]  # Get the first matching result
     else:
-        product_data = pd.DataFrame()
+        product_data = None
 else:
-    product_data = pd.DataFrame()
+    product_data = None
 
-if not product_data.empty:
+if product_data is not None:
     # Extract the relevant information for the selected product
-    material_score = product_data.iloc[0]['material_score']
-    carbon_footprint = product_data.iloc[0]['carbon_footprint']
-    packaging = product_data.iloc[0]['packaging']
-    tips = product_data.iloc[0]['tips']
+    material_score = product_data['material_score']
+    carbon_footprint = product_data['carbon_footprint']
+    packaging = product_data['packaging']
+    tips = product_data['tips']
 
     # Calculate total eco-score
     total_score = round((material_score + carbon_footprint + packaging) / 3, 1)
@@ -54,7 +67,7 @@ if not product_data.empty:
         theta=["Material", "Carbon Footprint", "Packaging", "Material"],
         line_close=True,
         markers=True,
-        title=f"{best_match.capitalize()} Eco-Friendliness Breakdown",
+        title=f"{product_name.capitalize()} Eco-Friendliness Breakdown",
     )
     fig.update_traces(fill='toself', line=dict(color=eco_colors[eco_rating]))
     fig.update_layout(polar=dict(radialaxis=dict(visible=True, range=[1, 10])))
