@@ -10,7 +10,7 @@
         body { background-color: #121212; color: white; }
         .search-container { margin: 50px auto; max-width: 600px; }
         .result-card { background: #1e1e1e; padding: 15px; border-radius: 10px; margin-top: 10px; }
-        .eco-score { font-size: 1.5rem; font-weight: bold; }
+        .eco-score { font-size: 1.5rem; font-weight: bold; color: #4CAF50; }
     </style>
 </head>
 <body>
@@ -26,31 +26,43 @@
     <script>
         $(document).ready(function() {
             let productData = [];
-            
+
+            // Load product data
             $.getJSON("products.json", function(data) {
                 productData = data;
             });
-            
+
+            // Handle input event
             $("#searchBox").on("input", function() {
                 let query = $(this).val().toLowerCase();
-                let matches = productData.filter(p => p.product_name.includes(query));
+                let matches = productData.filter(p => p.product_name.toLowerCase().includes(query));
                 $("#suggestions").empty();
-                
+
                 matches.slice(0, 5).forEach(m => {
                     $("#suggestions").append(`<button class='list-group-item list-group-item-action' onclick='showProduct("${m.product_name}")'>${m.product_name}</button>`);
                 });
             });
-            
+
+            // Handle Enter key
+            $("#searchBox").on("keypress", function(event) {
+                if (event.which === 13) {
+                    let query = $(this).val().toLowerCase();
+                    let product = productData.find(p => p.product_name.toLowerCase() === query);
+                    if (product) showProduct(product.product_name);
+                }
+            });
+
+            // Show product details
             window.showProduct = function(name) {
                 let product = productData.find(p => p.product_name === name);
                 if (product) {
-                    let ecoScore = Math.round((product.material_score + (10 - product.carbon_footprint) + product.packaging) / 3);
-                    
+                    let ecoScore = Math.round((product.material_score * 0.4 + (10 - product.carbon_footprint) * 0.5 + product.packaging * 0.1));
+
                     let tip = "";
-                    if (ecoScore >= 8) tip = "This is a highly sustainable choice!";
-                    else if (ecoScore >= 5) tip = "Consider eco-certified alternatives for better sustainability.";
-                    else tip = "This product has a high environmental impact. Look for greener options.";
-                    
+                    if (ecoScore >= 8) tip = "🌍 Great choice! This product is highly sustainable.";
+                    else if (ecoScore >= 5) tip = "♻️ Decent option, but consider eco-certified alternatives.";
+                    else tip = "⚠️ High environmental impact! Look for greener options.";
+
                     $("#productResults").html(`
                         <div class='result-card'>
                             <h3>${product.product_name}</h3>
@@ -68,3 +80,4 @@
     </script>
 </body>
 </html>
+
