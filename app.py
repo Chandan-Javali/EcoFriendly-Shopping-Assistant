@@ -3,27 +3,30 @@ import streamlit as st
 import plotly.express as px
 
 # Load the product data from the CSV file
-df = pd.read_csv('products.csv')  # Make sure the CSV file is in the same directory
+df = pd.read_csv('products.csv')
+
+# Ensure product names are stripped of whitespace and case-insensitive
+df['product_name'] = df['product_name'].str.strip().str.lower()
 
 # Streamlit page setup
 st.set_page_config(page_title="EcoShop AI - Sustainable Shopping Assistant", layout="centered")
 
 # App title and description
-st.title("🌱 EcoShop AI - Sustainable Shopping Assistant")
+st.title("\U0001F331 EcoShop AI - Sustainable Shopping Assistant")
 st.markdown("### Check the eco-friendliness of a product based on its sustainability factors.")
 
 # Input field for product name
-product_name = st.text_input("Enter product name:")
+product_name = st.text_input("Enter product name:").strip().lower()
 
 # Search for the product in the CSV
-product_data = df[df['product_name'].str.lower() == product_name.lower()]
+product_data = df[df['product_name'] == product_name]
 
 if not product_data.empty:
     # Extract the relevant information for the selected product
-    material_score = product_data['material_score'].values[0]
-    carbon_footprint = product_data['carbon_footprint'].values[0]
-    packaging = product_data['packaging'].values[0]
-    tips = product_data['tips'].values[0]
+    material_score = product_data.iloc[0]['material_score']
+    carbon_footprint = product_data.iloc[0]['carbon_footprint']
+    packaging = product_data.iloc[0]['packaging']
+    tips = product_data.iloc[0]['tips']
 
     # Calculate total eco-score
     total_score = round((material_score + carbon_footprint + packaging) / 3, 1)
@@ -51,4 +54,4 @@ if not product_data.empty:
     # Show radar chart
     st.plotly_chart(fig)
 else:
-    st.write("Product not found. Please try a different product.")
+    st.write("Product not found. Please check the name or try a different product.")
