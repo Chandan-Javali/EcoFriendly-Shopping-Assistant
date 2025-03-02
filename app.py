@@ -3,12 +3,16 @@ import pandas as pd
 
 # Load dataset
 def load_data():
-    return pd.read_csv("eco_friendly_products_full.csv")  # Ensure this file includes the "Tip" column
+    return pd.read_csv("eco_friendly_products_full.csv")
 
 def get_eco_details(category, product_name, df):
-    filtered_df = df[(df["Category"] == category) & (df["Product Name"].str.lower() == product_name.lower())]
+    product_name = product_name.strip().lower()  # Remove spaces and standardize case
+    df["Product Name"] = df["Product Name"].str.strip().str.lower()  # Standardize dataset
+    
+    filtered_df = df[(df["Category"] == category) & (df["Product Name"] == product_name)]
+    
     if not filtered_df.empty:
-        return filtered_df.iloc[0]["Eco Score"], filtered_df.iloc[0]["Tip"]  # Updated column name
+        return filtered_df.iloc[0]["Eco Score"], filtered_df.iloc[0]["Tip"]
     return "Not Found", "No sustainability tips available."
 
 # Streamlit UI
@@ -17,6 +21,10 @@ st.title("🌱 Eco-Friendly Shopping Assistant")
 
 # Load data
 df = load_data()
+
+# Debugging: Check available product names
+st.write("### Debug: Available Products in Selected Category")
+st.write(df[df["Category"] == "Kitchen"]["Product Name"].unique())  # Change "Kitchen" dynamically if needed
 
 # Category selection
 st.markdown("### Please select category")
@@ -42,4 +50,3 @@ if product_name:
     
     # Display sustainability tip
     st.markdown(f"**♻️ Eco Tip:** {eco_tip}")
-
