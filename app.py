@@ -26,23 +26,28 @@ df = load_data()
 st.markdown("### Please select category")
 category = st.selectbox("Select category", df["Category"].unique())
 
-# Interactive product selection
-col1, col2 = st.columns([3, 2])  # Create two columns for better UI
+# Product name input field (with session state to store selected product)
+if "selected_product" not in st.session_state:
+    st.session_state.selected_product = ""
+
+col1, col2, col3 = st.columns([3, 1.5, 2.5])
 
 with col1:
-    product_name = st.text_input("Product Name", placeholder="Type product name here...")
+    product_name = st.text_input("Product Name", value=st.session_state.selected_product, key="product_input", placeholder="Type product name here...")
 
 with col2:
+    st.write("")  # Spacer to align with input field
     if st.button("🔍 Check Available Products"):
+        st.session_state.show_dropdown = True  # Set flag to show dropdown
+
+with col3:
+    if st.session_state.get("show_dropdown", False):  # Show dropdown only after clicking the button
         available_products = df[df["Category"] == category]["Product Name"].unique()
         selected_product = st.selectbox("Available Products", available_products, key="product_dropdown")
-        if selected_product:
-            st.session_state.product_name = selected_product  # Auto-fill the text input
 
-# Auto-fill the text input when a product is selected
-if "product_name" in st.session_state:
-    product_name = st.session_state.product_name
-    st.session_state.pop("product_name")  # Clear session state after use
+        if selected_product:
+            st.session_state.selected_product = selected_product  # Save selected product in session state
+            st.experimental_rerun()  # Refresh the UI to update the input field
 
 # Display eco-score and eco tips
 if product_name:
@@ -60,4 +65,5 @@ if product_name:
     
     # Display sustainability tip
     st.markdown(f"**♻️ Eco Tip:** {eco_tip}")
+
 
