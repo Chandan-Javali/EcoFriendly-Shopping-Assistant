@@ -13,7 +13,6 @@ def load_data():
 df = load_data()
 
 st.title("\U0001F331 Eco-Friendly Shopping Assistant")
-
 st.markdown("## Please select category")
 
 # Category selection
@@ -24,20 +23,22 @@ selected_category = st.selectbox("Select category", categories)
 if "product_name" not in st.session_state:
     st.session_state.product_name = ""
 
-# Product search input
-product_name = st.text_input("Enter Product Name", value=st.session_state.product_name, key="product_name_input")
+# Product selection layout
+col1, col2 = st.columns([3, 2])
 
-# Product dropdown (Moved Below Text Input)
-available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
-selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
+with col1:
+    product_name = st.text_input("Product Name", value=st.session_state.product_name, key="product_name_input")
 
-# Sync text input with selected product
+# Adding space to push the dropdown below
+st.markdown("<br><br>", unsafe_allow_html=True)
+
+with col2:
+    available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
+    selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products", label_visibility="collapsed")
+
+# Sync text input with selected product and fuzzy matching
 if selected_product:
-    if st.session_state.product_name != selected_product:
-        st.session_state.product_name = selected_product  # Update text input
-        st.rerun()
-
-# Fuzzy matching for manual entry
+    st.session_state.product_name = selected_product
 elif product_name:
     best_match, score = process.extractOne(product_name, df['Product'].tolist(), scorer=fuzz.token_sort_ratio)
     if score >= 70:  # Adjust threshold as needed
@@ -66,7 +67,7 @@ if st.session_state.product_name:
     
     st.info(f"💡 Tip: {tip}")
 
-    # Plotting eco-score
+    # Plotting the eco-score gauge
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
         value=int(eco_score) if eco_score.isdigit() else 0,  # Convert score to int if possible
