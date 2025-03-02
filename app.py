@@ -4,7 +4,7 @@ import streamlit as st
 # Load the product data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("products_updated_v2.csv")
+    df = pd.read_csv("structured_products.csv")
     df.drop_duplicates(subset=['Product Name'], keep='first', inplace=True)  # Ensure unique items
     return df
 
