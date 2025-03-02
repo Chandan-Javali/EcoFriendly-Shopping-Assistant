@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 
 # Load the dataset
 def load_data():
-    file_path = "eco_friendly_product_full.csv"
+    file_path = "eco_friendly_product_cleaned.csv"  # Use the cleaned file
     df = pd.read_csv(file_path)
     return df
 
@@ -15,7 +15,7 @@ st.title("\U0001F331 Eco-Friendly Shopping Assistant")
 st.markdown("## Please select category")
 
 # Category selection
-categories = df['Category'].unique().tolist()
+categories = df['Category'].dropna().unique().tolist()
 selected_category = st.selectbox("Select category", categories)
 
 # Initialize session state for product_name
@@ -29,7 +29,7 @@ with col1:
     product_name = st.text_input("Product Name", value=st.session_state.product_name, key="product_name_input")
 
 with col2:
-    available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
+    available_products = df[df['Category'] == selected_category]['Product'].dropna().unique().tolist()
     selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
 
 # Sync text input with selected product
@@ -51,7 +51,7 @@ if st.session_state.product_name:
     st.markdown(f"\U0001F30D **The eco score for {st.session_state.product_name} is: {eco_score}**")
     if eco_score in ["1", "2"]:
         st.success("✅ Excellent eco-friendly choice!")
-    elif eco_score in ["3"]:
+    elif eco_score == "3":
         st.warning("⚠️ Moderate eco-friendly choice.")
     else:
         st.error("❌ Not an eco-friendly choice.")
@@ -59,27 +59,30 @@ if st.session_state.product_name:
 
     # Plotting
     fig = go.Figure(go.Indicator(
-        mode = "gauge+number",
-        value = int(eco_score) if eco_score.isdigit() else 0, # convert score to int if possible
-        domain = {'x': [0, 1], 'y': [0, 1]},
-        title = {'text': "Selected Product Eco-Score"},
-        gauge = {'axis': {'range': [None, 5]},
-                 'bar': {'color': "darkblue"},
-                 'steps' : [
-                     {'range': [0, 2], 'color': "lightgreen"},
-                     {'range': [2, 3], 'color': "yellow"},
-                     {'range': [3, 5], 'color': "red"}]}))
+        mode="gauge+number",
+        value=int(eco_score) if str(eco_score).isdigit() else 0,  # Convert to int safely
+        domain={'x': [0, 1], 'y': [0, 1]},
+        title={'text': "Selected Product Eco-Score"},
+        gauge={'axis': {'range': [None, 5]},
+               'bar': {'color': "darkblue"},
+               'steps': [
+                   {'range': [0, 2], 'color': "lightgreen"},
+                   {'range': [2, 3], 'color': "yellow"},
+                   {'range': [3, 5], 'color': "red"}]}
+    ))
     st.plotly_chart(fig)
 
     fig_ideal = go.Figure(go.Indicator(
-        mode = "gauge+number",
-        value = 1, # Ideal eco score is 1
-        domain = {'x': [0, 1], 'y': [0, 1]},
-        title = {'text': "Ideal Eco-Score"},
-        gauge = {'axis': {'range': [None, 5]},
-                 'bar': {'color': "darkblue"},
-                 'steps' : [
-                     {'range': [0, 2], 'color': "lightgreen"},
-                     {'range': [2, 3], 'color': "yellow"},
-                     {'range': [3, 5], 'color': "red"}]}))
+        mode="gauge+number",
+        value=1,  # Ideal eco score is 1
+        domain={'x': [0, 1], 'y': [0, 1]},
+        title={'text': "Ideal Eco-Score"},
+        gauge={'axis': {'range': [None, 5]},
+               'bar': {'color': "darkblue"},
+               'steps': [
+                   {'range': [0, 2], 'color': "lightgreen"},
+                   {'range': [2, 3], 'color': "yellow"},
+                   {'range': [3, 5], 'color': "red"}]}
+    ))
     st.plotly_chart(fig_ideal)
+
