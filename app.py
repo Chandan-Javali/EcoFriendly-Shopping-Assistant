@@ -35,20 +35,30 @@ if selected_product:
 with col1:
     product_name = st.text_input("Product Name", value=st.session_state.product_name, key="product_name_input")
 
-# Function to get eco score
-def get_eco_score(product):
+# Search functionality
+search_query = st.text_input("🔍 Search for a product")
+if search_query:
+    search_results = df[df['Product Name'].str.contains(search_query, case=False, na=False)]['Product Name'].tolist()
+    if search_results:
+        st.write("### Search Results")
+        st.write(search_results)
+    else:
+        st.write("No matching products found.")
+
+# Function to get eco score and tip
+def get_eco_details(product):
     row = df[df['Product Name'].str.lower() == product.lower()]
     if not row.empty:
-        return row.iloc[0]['Eco Score']
-    return "Not Found"
+        return row.iloc[0]['Eco Score'], row.iloc[0].get('Eco Tip', "No tip available.")
+    return "Not Found", "No tip available."
 
-# Display the eco score
+# Display the eco score and tip
 if st.session_state.product_name:
-    eco_score = get_eco_score(st.session_state.product_name)
+    eco_score, eco_tip = get_eco_details(st.session_state.product_name)
     st.markdown(f"🌍 **The eco score for {st.session_state.product_name} is: {eco_score}**")
+    st.markdown(f"💡 **Tip:** {eco_tip}")
     if eco_score in ["A", "B"]:
         st.success("✅ Excellent eco-friendly choice!")
     else:
         st.error("❌ Not an eco-friendly choice.")
-
 
