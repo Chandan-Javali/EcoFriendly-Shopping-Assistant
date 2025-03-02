@@ -1,0 +1,96 @@
+Category,Product Name,Eco Score,Tip
+Household,Milk,B,Buy organic or locally sourced milk to reduce carbon footprint.
+Household,Fan,B,Use energy-efficient fans to reduce electricity consumption.
+Household,Detergent,D,Opt for biodegradable and phosphate-free detergents.
+Household,Toilet Paper,B,Choose recycled or bamboo-based toilet paper.
+Household,Mop,C,Use reusable microfiber mops instead of disposable ones.
+Household,Bulb,A,Switch to LED bulbs for better energy efficiency.
+Household,Broom,C,Use brooms made from natural or recycled materials.
+Household,Air Freshener,B,Try natural alternatives like baking soda or essential oils.
+Household,Dish Soap,A,"Look for plant-based, non-toxic dish soaps."
+Household,Laundry Basket,C,Use baskets made from recycled plastic or sustainable materials.
+Electronics,Laptop,D,Choose energy-efficient models with recyclable components.
+Electronics,Smartphone,D,Consider refurbished or modular smartphones to reduce e-waste.
+Electronics,Headphones,D,Opt for brands committed to sustainability and recyclability.
+Electronics,Monitor,A,Use energy-saving modes and recycle old monitors responsibly.
+Electronics,Tablet,D,Turn on battery saver mode to extend device lifespan.
+Electronics,Smartwatch,D,Choose smartwatches made from sustainable materials.
+Electronics,Keyboard,B,Select mechanical keyboards with replaceable switches to reduce waste.
+Electronics,Mouse,D,Look for rechargeable or solar-powered mice.
+Electronics,Charger,C,Use smart chargers that prevent overcharging.
+Electronics,Speaker,D,Buy speakers made from recycled or eco-friendly materials.
+Kitchen,Pan,D,"Choose non-toxic, PFOA-free non-stick pans."
+Kitchen,Blender,B,Use blenders with glass jars instead of plastic.
+Kitchen,Knife Set,C,Invest in stainless steel knives that last longer.
+Kitchen,Microwave,B,Unplug when not in use to save energy.
+Kitchen,Toaster,B,Use energy-efficient toasters with auto shut-off.
+Kitchen,Refrigerator,C,Maintain a full fridge to reduce energy usage.
+Kitchen,Oven,D,Use convection mode for better efficiency.
+Kitchen,Cutting Board,C,Choose bamboo or recycled plastic cutting boards.
+Kitchen,Kettle,C,Use electric kettles with auto shut-off to save power.
+Kitchen,Dishwasher,A,Run only full loads to conserve water and energy.
+Groceries,Rice,B,Buy in bulk to reduce packaging waste.
+Groceries,Vegetable Oil,B,Choose organic and sustainably sourced oils.
+Groceries,Bread,B,"Purchase fresh, locally baked bread to avoid preservatives."
+Groceries,Pasta,B,Look for whole grain or organic options.
+Groceries,Sugar,A,Prefer unrefined or organic sugar.
+Groceries,Salt,A,Use minimally processed sea salt.
+Groceries,Eggs,D,Buy free-range or pasture-raised eggs.
+Groceries,Flour,C,Choose whole wheat or unbleached flour.
+Groceries,Honey,A,Support local beekeepers for sustainable honey production.
+Personal Care,Shampoo,B,Use sulfate-free shampoos with biodegradable packaging.
+Personal Care,Soap,D,Opt for bar soaps with minimal plastic wrapping.
+Personal Care,Toothpaste,B,Try toothpaste tablets instead of plastic tubes.
+Personal Care,Face Wash,D,Pick brands that avoid microplastics.
+Personal Care,Conditioner,A,Choose refillable conditioner bottles to reduce waste.
+Personal Care,Lotion,B,Look for organic and cruelty-free lotions.
+Personal Care,Deodorant,D,Use aluminum-free and natural deodorants.
+Personal Care,Hair Brush,B,Buy brushes made from bamboo instead of plastic.
+Personal Care,Razor,C,Use safety razors with replaceable blades.
+Personal Care,Hand Sanitizer,D,Choose sanitizers with natural ingredients.
+Food,Turmeric,A,Buy organic turmeric to avoid pesticides.
+Food,Chilli Powder,B,Choose locally ground chili powder with minimal processing.
+Electronics,SIM Card,D,Reuse SIM cards when possible and recycle old ones properly.
+Electronics,Microchip,D,Opt for refurbished electronic components to reduce e-waste.
+Household,Toothbrush,C,Use bamboo toothbrushes instead of plastic ones.
+Clothing,Cotton T-Shirt,B,Buy organic cotton T-shirts with eco-friendly dyes.
+Office,Notebook,B,Choose recycled paper notebooks to reduce deforestation.
+Kitchen,Steel Water Bottle,A,Use a reusable steel water bottle instead of plastic.
+Furniture,Wooden Chair,C,Choose FSC-certified wood furniture for sustainability.
+Automobile,Shoe,C,Opt for reusable or recycled materials.
+Food,Table,A,Buy locally made to reduce transportation emissions.
+Clothing,Chair,B,Look for certified eco-friendly labels.
+Furniture,Bike Helmet,C,"Reduce, reuse, and recycle whenever possible."
+Sports,Pen,D,"Reduce, reuse, and recycle whenever possible."
+Clothing,Bag,B,Look for certified eco-friendly labels.
+Kitchen,Knife,C,Choose stainless steel or ceramic knives for durability.
+Kitchen,Spoon,B,Use wooden or stainless steel spoons instead of plastic.
+Kitchen,Plate,B,Opt for ceramic or biodegradable plates instead of plastic.
+Kitchen,Frying Pan,C,"Choose non-toxic, PFOA-free frying pans for health and sustainability."
+Kitchen,Pepper,A,Use whole black peppercorns instead of pre-ground pepper.
+Kitchen,Garlic Powder,B,Choose locally sourced garlic powder for reduced carbon footprint.
+Kitchen,Ginger,A,Use fresh ginger instead of processed alternatives.
+Kitchen,Cloves,A,Buy whole cloves to maintain freshness and avoid preservatives.
+Kitchen,Cumin,A,Use organic cumin seeds to avoid synthetic pesticides.
+Kitchen,Coriander,A,Choose fresh coriander over pre-packaged options.
+Kitchen,Mustard Seeds,A,Go for locally grown mustard seeds to reduce emissions.
+Kitchen,Tongs,B,Use stainless steel tongs instead of plastic ones.
+Kitchen,Ladle,B,Opt for bamboo or stainless steel ladles for longevity.
+Kitchen,Spatula,B,Use wooden or silicone spatulas for sustainability.
+Kitchen,Whisk,B,Choose a stainless steel whisk instead of plastic.
+Kitchen,Rolling Pin,A,Use wooden rolling pins instead of synthetic materials.
+Kitchen,Peeler,B,Opt for a stainless steel peeler for durability.
+Kitchen,Grater,B,Use a metal grater instead of plastic alternatives.
+Kitchen,Measuring Cups,B,Choose stainless steel measuring cups over plastic ones.
+Kitchen,Mixer,C,Opt for energy-efficient kitchen mixers with high durability.
+Kitchen,Grinder,C,Use manual grinders to reduce electricity usage.
+Kitchen,Food Processor,C,Use energy-efficient food processors for sustainability.
+Kitchen,Storage Container,A,Choose glass or stainless steel containers instead of plastic.
+Kitchen,Jars,A,Reuse glass jars for storage instead of buying new ones.
+Kitchen,Strainer,B,Use a metal strainer instead of plastic ones.
+Kitchen,Colander,B,Opt for stainless steel colanders for durability.
+Kitchen,Chopping Mat,B,Choose bamboo or eco-friendly plastic mats.
+Kitchen,Napkins,A,Use cloth napkins instead of disposable paper ones.
+Kitchen,Towels,A,Buy organic cotton towels for better sustainability.
+Kitchen,Mittens,A,Use heat-resistant fabric mittens instead of synthetic ones.
+Kitchen,Dish Rack,B,Choose bamboo or stainless steel dish racks over plastic.
