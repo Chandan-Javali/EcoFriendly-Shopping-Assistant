@@ -23,16 +23,17 @@ if "product_name" not in st.session_state:
 
 # Product selection layout
 col1, col2 = st.columns([3, 2])
-with col1:
-    product_name = st.text_input("Product Name", value=st.session_state.product_name, placeholder="Type product name here...")
 
 with col2:
     available_products = df[df['Category'] == selected_category]['Product Name'].unique().tolist()
     selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
 
-# Update text input when a product is selected (without rerunning)
+# Sync text input with selected product
 if selected_product:
     st.session_state.product_name = selected_product
+
+with col1:
+    product_name = st.text_input("Product Name", value=st.session_state.product_name, key="product_name_input")
 
 # Function to get eco score
 def get_eco_score(product):
@@ -49,3 +50,4 @@ if st.session_state.product_name:
         st.success("✅ Excellent eco-friendly choice!")
     else:
         st.error("❌ Not an eco-friendly choice.")
+
