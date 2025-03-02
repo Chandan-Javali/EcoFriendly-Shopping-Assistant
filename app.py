@@ -6,8 +6,8 @@ def load_data():
     return pd.read_csv("eco_friendly_products_full.csv")
 
 def get_eco_details(category, product_name, df):
-    product_name = product_name.strip().lower()  # Remove spaces and standardize case
-    df["Product Name"] = df["Product Name"].str.strip().str.lower()  # Standardize dataset
+    product_name = product_name.strip().lower()  # Normalize user input
+    df["Product Name"] = df["Product Name"].str.strip().str.lower()  # Normalize dataset
     
     filtered_df = df[(df["Category"] == category) & (df["Product Name"] == product_name)]
     
@@ -22,17 +22,27 @@ st.title("🌱 Eco-Friendly Shopping Assistant")
 # Load data
 df = load_data()
 
-# Debugging: Check available product names
-st.write("### Debug: Available Products in Selected Category")
-st.write(df[df["Category"] == "Kitchen"]["Product Name"].unique())  # Change "Kitchen" dynamically if needed
-
 # Category selection
 st.markdown("### Please select category")
 category = st.selectbox("Select category", df["Category"].unique())
 
-# Product input
-st.markdown("### Enter the product name below")
-product_name = st.text_input("Product Name", placeholder="Type product name here...")
+# Interactive product selection
+col1, col2 = st.columns([3, 2])  # Create two columns for better UI
+
+with col1:
+    product_name = st.text_input("Product Name", placeholder="Type product name here...")
+
+with col2:
+    if st.button("🔍 Check Available Products"):
+        available_products = df[df["Category"] == category]["Product Name"].unique()
+        selected_product = st.selectbox("Available Products", available_products, key="product_dropdown")
+        if selected_product:
+            st.session_state.product_name = selected_product  # Auto-fill the text input
+
+# Auto-fill the text input when a product is selected
+if "product_name" in st.session_state:
+    product_name = st.session_state.product_name
+    st.session_state.pop("product_name")  # Clear session state after use
 
 # Display eco-score and eco tips
 if product_name:
@@ -50,3 +60,4 @@ if product_name:
     
     # Display sustainability tip
     st.markdown(f"**♻️ Eco Tip:** {eco_tip}")
+
