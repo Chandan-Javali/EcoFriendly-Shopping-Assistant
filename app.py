@@ -17,25 +17,22 @@ st.markdown("## Please select category")
 categories = df['Category'].unique().tolist()
 selected_category = st.selectbox("Select category", categories)
 
-# Product input layout
+# Product selection
 col1, col2 = st.columns([3, 2])
 with col1:
     product_name = st.text_input("Product Name", placeholder="Type product name here...")
 
-# Check available products button
-selected_product = None
 with col2:
-    if st.button("🔍 Check Available Products"):
-        available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
+    if st.button("🔍 Check Available Products", key="check_products"):
+        available_products = df[df['Category'] == selected_category]['Product Name'].unique().tolist()
         selected_product = st.selectbox("Available Products", available_products, key="available_products")
 
-# If a product is selected from the list, update the product_name field
-if selected_product:
-    product_name = selected_product
+        # Auto-fill product name field
+        product_name = selected_product
 
 # Display the eco score
 def get_eco_score(product):
-    row = df[df['Product'].str.lower() == product.lower()]
+    row = df[df['Product Name'].str.lower() == product.lower()]
     if not row.empty:
         return row.iloc[0]['Eco Score']
     return "Not Found"
