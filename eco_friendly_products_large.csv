@@ -1,0 +1,1001 @@
+Category,Product Name,Eco Score
+Household,Detergent,A
+Personal Care,Conditioner,D
+Groceries,Rice,B
+Personal Care,Shampoo,B
+Household,Mop,B
+Groceries,Sugar,D
+Household,Bulb,B
+Groceries,Pasta,A
+Kitchen,Blender,A
+Kitchen,Blender,C
+Household,Bulb,B
+Kitchen,Refrigerator,B
+Personal Care,Lotion,D
+Personal Care,Lotion,B
+Personal Care,Lotion,C
+Kitchen,Microwave,D
+Electronics,Smartwatch,B
+Personal Care,Toothpaste,D
+Household,Milk,A
+Kitchen,Blender,B
+Electronics,Tablet,B
+Household,Toilet Paper,A
+Household,Detergent,D
+Kitchen,Toaster,C
+Groceries,Rice,C
+Kitchen,Refrigerator,D
+Personal Care,Lotion,B
+Groceries,Bread,D
+Groceries,Salt,C
+Electronics,Headphones,C
+Electronics,Headphones,D
+Kitchen,Pan,B
+Kitchen,Knife Set,D
+Personal Care,Toothpaste,D
+Household,Bulb,C
+Electronics,Monitor,D
+Household,Mop,C
+Household,Fan,A
+Personal Care,Lotion,C
+Personal Care,Toothpaste,A
+Personal Care,Soap,D
+Kitchen,Pan,D
+Kitchen,Microwave,B
+Kitchen,Toaster,B
+Personal Care,Lotion,A
+Groceries,Pasta,A
+Personal Care,Lotion,A
+Groceries,Rice,D
+Electronics,Laptop,D
+Groceries,Bread,D
+Groceries,Salt,A
+Kitchen,Pan,A
+Personal Care,Toothpaste,D
+Kitchen,Refrigerator,A
+Groceries,Salt,D
+Groceries,Bread,A
+Electronics,Smartwatch,A
+Kitchen,Refrigerator,C
+Groceries,Pasta,C
+Electronics,Smartwatch,C
+Personal Care,Conditioner,D
+Personal Care,Conditioner,B
+Groceries,Vegetable Oil,C
+Personal Care,Conditioner,B
+Household,Bulb,C
+Kitchen,Toaster,C
+Groceries,Vegetable Oil,B
+Household,Detergent,B
+Electronics,Tablet,C
+Groceries,Bread,B
+Personal Care,Face Wash,C
+Personal Care,Conditioner,D
+Personal Care,Toothpaste,B
+Personal Care,Face Wash,B
+Personal Care,Soap,C
+Personal Care,Lotion,D
+Kitchen,Pan,B
+Household,Bulb,A
+Electronics,Headphones,D
+Kitchen,Refrigerator,B
+Household,Milk,A
+Household,Toilet Paper,B
+Kitchen,Refrigerator,A
+Electronics,Smartwatch,C
+Household,Milk,D
+Personal Care,Toothpaste,C
+Kitchen,Blender,C
+Groceries,Vegetable Oil,D
+Personal Care,Conditioner,C
+Electronics,Headphones,B
+Electronics,Laptop,B
+Personal Care,Soap,B
+Kitchen,Pan,C
+Groceries,Sugar,A
+Personal Care,Lotion,A
+Groceries,Sugar,C
+Personal Care,Toothpaste,C
+Electronics,Tablet,A
+Groceries,Sugar,B
+Electronics,Monitor,A
+Groceries,Rice,C
+Personal Care,Lotion,D
+Groceries,Rice,A
+Kitchen,Blender,B
+Electronics,Monitor,C
+Kitchen,Blender,A
+Kitchen,Microwave,A
+Groceries,Bread,C
+Household,Milk,C
+Household,Fan,A
+Household,Fan,D
+Groceries,Salt,A
+Groceries,Rice,B
+Groceries,Vegetable Oil,C
+Kitchen,Pan,A
+Groceries,Pasta,A
+Personal Care,Lotion,B
+Electronics,Smartwatch,C
+Kitchen,Refrigerator,D
+Household,Milk,D
+Groceries,Rice,D
+Groceries,Bread,D
+Groceries,Bread,D
+Household,Detergent,B
+Personal Care,Face Wash,D
+Personal Care,Face Wash,A
+Household,Toilet Paper,B
+Kitchen,Toaster,B
+Groceries,Salt,C
+Household,Toilet Paper,B
+Personal Care,Conditioner,B
+Electronics,Smartwatch,D
+Household,Milk,C
+Electronics,Tablet,D
+Personal Care,Face Wash,D
+Personal Care,Toothpaste,B
+Kitchen,Blender,B
+Groceries,Rice,D
+Kitchen,Refrigerator,C
+Personal Care,Lotion,D
+Personal Care,Toothpaste,C
+Kitchen,Blender,A
+Groceries,Vegetable Oil,B
+Groceries,Salt,C
+Personal Care,Face Wash,D
+Household,Mop,A
+Kitchen,Microwave,A
+Personal Care,Shampoo,C
+Household,Fan,B
+Electronics,Monitor,C
+Electronics,Smartwatch,B
+Household,Milk,A
+Household,Bulb,C
+Household,Bulb,D
+Personal Care,Shampoo,D
+Personal Care,Face Wash,C
+Kitchen,Knife Set,A
+Household,Toilet Paper,B
+Electronics,Headphones,D
+Groceries,Pasta,B
+Electronics,Headphones,A
+Personal Care,Face Wash,A
+Kitchen,Pan,C
+Groceries,Salt,B
+Groceries,Sugar,C
+Electronics,Smartphone,A
+Electronics,Smartwatch,C
+Household,Bulb,D
+Groceries,Vegetable Oil,B
+Electronics,Tablet,C
+Electronics,Smartphone,B
+Household,Toilet Paper,A
+Electronics,Monitor,D
+Kitchen,Microwave,D
+Kitchen,Refrigerator,D
+Kitchen,Microwave,D
+Kitchen,Refrigerator,A
+Personal Care,Soap,B
+Groceries,Bread,A
+Electronics,Laptop,A
+Kitchen,Pan,C
+Groceries,Vegetable Oil,A
+Kitchen,Microwave,C
+Personal Care,Soap,B
+Groceries,Vegetable Oil,C
+Kitchen,Refrigerator,A
+Personal Care,Lotion,A
+Groceries,Rice,B
+Personal Care,Face Wash,D
+Electronics,Monitor,A
+Electronics,Smartphone,D
+Kitchen,Knife Set,D
+Electronics,Smartwatch,C
+Personal Care,Soap,C
+Household,Detergent,C
+Personal Care,Conditioner,D
+Household,Bulb,A
+Kitchen,Pan,A
+Kitchen,Knife Set,A
+Kitchen,Blender,C
+Kitchen,Blender,D
+Personal Care,Lotion,B
+Household,Fan,A
+Household,Mop,B
+Personal Care,Soap,B
+Electronics,Smartphone,B
+Groceries,Salt,B
+Groceries,Rice,A
+Electronics,Tablet,B
+Groceries,Salt,B
+Kitchen,Knife Set,B
+Personal Care,Shampoo,B
+Personal Care,Toothpaste,A
+Personal Care,Conditioner,B
+Groceries,Pasta,A
+Kitchen,Microwave,A
+Household,Detergent,C
+Kitchen,Refrigerator,D
+Electronics,Smartwatch,A
+Kitchen,Microwave,D
+Personal Care,Shampoo,B
+Personal Care,Toothpaste,D
+Household,Milk,A
+Electronics,Laptop,C
+Kitchen,Blender,D
+Electronics,Monitor,D
+Electronics,Laptop,B
+Electronics,Laptop,B
+Household,Bulb,C
+Kitchen,Refrigerator,A
+Household,Fan,B
+Kitchen,Pan,D
+Groceries,Bread,D
+Electronics,Laptop,B
+Groceries,Sugar,A
+Electronics,Monitor,C
+Household,Milk,A
+Household,Bulb,A
+Kitchen,Microwave,A
+Household,Milk,A
+Groceries,Vegetable Oil,C
+Electronics,Monitor,C
+Electronics,Smartwatch,A
+Personal Care,Conditioner,B
+Groceries,Vegetable Oil,C
+Kitchen,Pan,C
+Groceries,Rice,D
+Personal Care,Lotion,C
+Personal Care,Shampoo,A
+Personal Care,Toothpaste,D
+Personal Care,Shampoo,C
+Kitchen,Microwave,A
+Household,Toilet Paper,C
+Kitchen,Blender,C
+Kitchen,Refrigerator,B
+Personal Care,Lotion,D
+Groceries,Pasta,B
+Kitchen,Knife Set,B
+Kitchen,Microwave,D
+Electronics,Tablet,D
+Household,Detergent,B
+Kitchen,Toaster,A
+Household,Bulb,D
+Electronics,Smartwatch,B
+Electronics,Laptop,C
+Groceries,Sugar,A
+Kitchen,Toaster,A
+Personal Care,Conditioner,C
+Kitchen,Knife Set,D
+Household,Bulb,C
+Household,Fan,D
+Household,Toilet Paper,A
+Groceries,Sugar,C
+Kitchen,Blender,D
+Electronics,Headphones,B
+Kitchen,Blender,A
+Groceries,Bread,D
+Groceries,Bread,D
+Personal Care,Toothpaste,A
+Kitchen,Toaster,B
+Kitchen,Pan,C
+Electronics,Laptop,D
+Kitchen,Toaster,A
+Groceries,Rice,B
+Personal Care,Toothpaste,C
+Groceries,Sugar,C
+Kitchen,Refrigerator,B
+Electronics,Smartphone,A
+Personal Care,Soap,C
+Groceries,Pasta,A
+Household,Fan,B
+Personal Care,Toothpaste,D
+Household,Fan,B
+Household,Milk,D
+Groceries,Vegetable Oil,A
+Electronics,Laptop,D
+Kitchen,Toaster,D
+Household,Mop,A
+Groceries,Bread,A
+Electronics,Laptop,D
+Electronics,Monitor,C
+Kitchen,Blender,A
+Kitchen,Blender,D
+Electronics,Laptop,C
+Electronics,Smartphone,D
+Electronics,Smartwatch,A
+Household,Fan,C
+Electronics,Smartwatch,D
+Kitchen,Pan,A
+Kitchen,Knife Set,C
+Groceries,Bread,B
+Household,Milk,B
+Kitchen,Toaster,B
+Kitchen,Knife Set,D
+Kitchen,Refrigerator,C
+Personal Care,Shampoo,B
+Kitchen,Toaster,B
+Household,Toilet Paper,B
+Personal Care,Conditioner,C
+Electronics,Tablet,C
+Personal Care,Lotion,C
+Household,Bulb,B
+Electronics,Smartwatch,B
+Groceries,Bread,C
+Household,Toilet Paper,B
+Groceries,Rice,D
+Groceries,Rice,B
+Kitchen,Refrigerator,A
+Household,Fan,C
+Personal Care,Toothpaste,A
+Personal Care,Face Wash,C
+Kitchen,Microwave,B
+Electronics,Headphones,A
+Personal Care,Lotion,D
+Personal Care,Face Wash,B
+Groceries,Pasta,C
+Groceries,Bread,B
+Personal Care,Conditioner,B
+Household,Milk,C
+Personal Care,Toothpaste,A
+Electronics,Smartwatch,B
+Personal Care,Conditioner,D
+Personal Care,Face Wash,A
+Electronics,Laptop,C
+Electronics,Monitor,B
+Household,Mop,C
+Kitchen,Toaster,A
+Groceries,Pasta,A
+Groceries,Pasta,C
+Personal Care,Face Wash,C
+Kitchen,Toaster,B
+Household,Milk,A
+Kitchen,Toaster,C
+Personal Care,Soap,B
+Electronics,Headphones,D
+Personal Care,Soap,D
+Groceries,Salt,A
+Personal Care,Toothpaste,D
+Electronics,Monitor,B
+Personal Care,Lotion,A
+Household,Bulb,D
+Electronics,Headphones,B
+Groceries,Pasta,D
+Kitchen,Knife Set,C
+Kitchen,Microwave,C
+Kitchen,Toaster,D
+Groceries,Rice,D
+Groceries,Salt,D
+Personal Care,Toothpaste,D
+Kitchen,Refrigerator,D
+Household,Mop,A
+Household,Mop,B
+Kitchen,Blender,D
+Groceries,Rice,A
+Groceries,Bread,A
+Groceries,Salt,A
+Personal Care,Soap,A
+Personal Care,Lotion,A
+Kitchen,Knife Set,B
+Kitchen,Refrigerator,D
+Household,Detergent,D
+Household,Milk,B
+Personal Care,Lotion,C
+Electronics,Tablet,D
+Household,Toilet Paper,A
+Groceries,Rice,B
+Household,Bulb,B
+Electronics,Smartphone,A
+Groceries,Sugar,D
+Personal Care,Shampoo,A
+Groceries,Vegetable Oil,A
+Electronics,Laptop,A
+Kitchen,Blender,D
+Personal Care,Shampoo,C
+Groceries,Rice,A
+Groceries,Sugar,D
+Household,Milk,B
+Groceries,Bread,B
+Electronics,Smartwatch,C
+Groceries,Salt,C
+Personal Care,Lotion,A
+Groceries,Pasta,D
+Household,Detergent,D
+Groceries,Salt,D
+Groceries,Salt,D
+Electronics,Headphones,C
+Groceries,Pasta,D
+Personal Care,Lotion,B
+Kitchen,Toaster,C
+Kitchen,Microwave,D
+Groceries,Pasta,A
+Electronics,Monitor,A
+Electronics,Laptop,B
+Household,Bulb,B
+Electronics,Laptop,D
+Groceries,Rice,B
+Kitchen,Knife Set,B
+Electronics,Headphones,B
+Kitchen,Pan,C
+Household,Mop,A
+Groceries,Vegetable Oil,A
+Household,Mop,A
+Kitchen,Microwave,D
+Kitchen,Knife Set,B
+Electronics,Laptop,B
+Electronics,Headphones,A
+Kitchen,Toaster,D
+Groceries,Pasta,B
+Kitchen,Blender,D
+Household,Detergent,A
+Groceries,Rice,C
+Household,Fan,B
+Groceries,Salt,A
+Electronics,Tablet,D
+Electronics,Monitor,B
+Household,Bulb,C
+Household,Bulb,B
+Groceries,Bread,D
+Electronics,Laptop,B
+Personal Care,Lotion,A
+Kitchen,Blender,D
+Personal Care,Shampoo,A
+Electronics,Laptop,B
+Groceries,Vegetable Oil,C
+Personal Care,Face Wash,D
+Electronics,Smartwatch,B
+Electronics,Monitor,D
+Electronics,Smartwatch,C
+Household,Milk,A
+Electronics,Monitor,C
+Electronics,Laptop,C
+Household,Toilet Paper,B
+Electronics,Tablet,C
+Personal Care,Shampoo,A
+Electronics,Smartwatch,A
+Groceries,Bread,B
+Household,Fan,C
+Personal Care,Soap,D
+Groceries,Bread,C
+Personal Care,Shampoo,A
+Personal Care,Lotion,D
+Household,Fan,A
+Kitchen,Toaster,A
+Electronics,Laptop,C
+Electronics,Tablet,D
+Kitchen,Refrigerator,A
+Electronics,Smartphone,B
+Household,Bulb,B
+Personal Care,Face Wash,B
+Groceries,Bread,C
+Household,Toilet Paper,D
+Household,Fan,C
+Personal Care,Face Wash,D
+Kitchen,Knife Set,B
+Personal Care,Conditioner,D
+Personal Care,Shampoo,D
+Groceries,Salt,D
+Household,Bulb,D
+Groceries,Sugar,A
+Personal Care,Face Wash,C
+Household,Toilet Paper,A
+Personal Care,Lotion,D
+Household,Mop,C
+Electronics,Headphones,D
+Household,Toilet Paper,A
+Household,Bulb,D
+Household,Mop,D
+Groceries,Sugar,A
+Personal Care,Lotion,D
+Kitchen,Refrigerator,D
+Electronics,Headphones,B
+Kitchen,Blender,C
+Electronics,Tablet,C
+Electronics,Headphones,D
+Kitchen,Knife Set,D
+Kitchen,Blender,C
+Electronics,Headphones,C
+Groceries,Vegetable Oil,D
+Personal Care,Soap,C
+Groceries,Pasta,B
+Kitchen,Blender,C
+Electronics,Smartwatch,C
+Groceries,Rice,D
+Personal Care,Lotion,A
+Household,Fan,C
+Personal Care,Shampoo,B
+Personal Care,Lotion,D
+Groceries,Rice,D
+Kitchen,Knife Set,C
+Personal Care,Face Wash,C
+Electronics,Headphones,C
+Household,Milk,B
+Electronics,Monitor,A
+Groceries,Rice,B
+Kitchen,Refrigerator,D
+Kitchen,Toaster,A
+Personal Care,Shampoo,B
+Personal Care,Lotion,B
+Household,Detergent,D
+Kitchen,Toaster,D
+Groceries,Vegetable Oil,D
+Personal Care,Toothpaste,A
+Electronics,Laptop,D
+Household,Toilet Paper,A
+Kitchen,Toaster,D
+Groceries,Bread,C
+Household,Mop,B
+Household,Toilet Paper,A
+Groceries,Rice,A
+Groceries,Rice,B
+Electronics,Smartphone,C
+Personal Care,Shampoo,A
+Groceries,Vegetable Oil,C
+Household,Fan,A
+Groceries,Rice,A
+Electronics,Headphones,A
+Kitchen,Blender,D
+Household,Toilet Paper,A
+Electronics,Smartphone,B
+Kitchen,Refrigerator,C
+Kitchen,Microwave,D
+Kitchen,Toaster,A
+Kitchen,Blender,B
+Kitchen,Microwave,B
+Household,Bulb,B
+Household,Detergent,D
+Electronics,Smartwatch,D
+Groceries,Sugar,D
+Electronics,Tablet,C
+Kitchen,Refrigerator,A
+Kitchen,Knife Set,B
+Kitchen,Blender,D
+Groceries,Rice,C
+Household,Bulb,D
+Kitchen,Knife Set,C
+Electronics,Headphones,C
+Electronics,Smartwatch,B
+Electronics,Headphones,D
+Kitchen,Toaster,B
+Groceries,Vegetable Oil,D
+Groceries,Pasta,B
+Personal Care,Lotion,D
+Groceries,Vegetable Oil,B
+Electronics,Laptop,D
+Personal Care,Conditioner,D
+Household,Bulb,C
+Electronics,Monitor,D
+Groceries,Bread,A
+Personal Care,Conditioner,D
+Personal Care,Toothpaste,D
+Household,Bulb,B
+Groceries,Pasta,A
+Household,Detergent,C
+Household,Bulb,A
+Household,Bulb,B
+Electronics,Headphones,B
+Personal Care,Lotion,C
+Groceries,Bread,A
+Groceries,Sugar,C
+Groceries,Rice,C
+Groceries,Sugar,B
+Groceries,Vegetable Oil,A
+Personal Care,Soap,D
+Electronics,Tablet,D
+Electronics,Laptop,B
+Personal Care,Soap,B
+Groceries,Pasta,D
+Electronics,Headphones,B
+Personal Care,Soap,D
+Kitchen,Blender,C
+Personal Care,Lotion,B
+Groceries,Bread,D
+Kitchen,Microwave,C
+Electronics,Laptop,C
+Kitchen,Microwave,C
+Household,Mop,D
+Groceries,Rice,C
+Kitchen,Knife Set,A
+Personal Care,Soap,B
+Kitchen,Toaster,B
+Groceries,Salt,D
+Electronics,Smartphone,B
+Personal Care,Lotion,B
+Personal Care,Shampoo,C
+Kitchen,Refrigerator,C
+Personal Care,Conditioner,A
+Electronics,Headphones,A
+Electronics,Laptop,D
+Groceries,Vegetable Oil,A
+Household,Detergent,D
+Groceries,Pasta,B
+Groceries,Sugar,B
+Personal Care,Conditioner,B
+Household,Detergent,A
+Groceries,Sugar,B
+Household,Bulb,B
+Groceries,Sugar,B
+Kitchen,Pan,D
+Electronics,Monitor,B
+Personal Care,Shampoo,A
+Kitchen,Microwave,D
+Electronics,Laptop,A
+Personal Care,Soap,C
+Groceries,Rice,A
+Groceries,Rice,D
+Kitchen,Pan,C
+Electronics,Smartphone,A
+Kitchen,Toaster,B
+Personal Care,Soap,D
+Groceries,Pasta,C
+Kitchen,Refrigerator,A
+Electronics,Laptop,A
+Household,Toilet Paper,D
+Kitchen,Toaster,A
+Electronics,Tablet,B
+Groceries,Bread,A
+Household,Detergent,B
+Groceries,Bread,D
+Personal Care,Soap,A
+Household,Detergent,D
+Groceries,Rice,A
+Household,Fan,C
+Household,Toilet Paper,A
+Kitchen,Toaster,C
+Household,Bulb,A
+Electronics,Smartphone,B
+Groceries,Vegetable Oil,B
+Personal Care,Lotion,B
+Personal Care,Toothpaste,C
+Groceries,Pasta,C
+Household,Mop,C
+Personal Care,Lotion,D
+Kitchen,Toaster,D
+Groceries,Salt,C
+Kitchen,Pan,D
+Personal Care,Lotion,B
+Personal Care,Soap,C
+Groceries,Vegetable Oil,D
+Electronics,Headphones,C
+Personal Care,Soap,A
+Groceries,Sugar,B
+Electronics,Laptop,D
+Electronics,Smartwatch,C
+Household,Fan,A
+Kitchen,Knife Set,B
+Personal Care,Shampoo,B
+Household,Milk,C
+Kitchen,Refrigerator,C
+Household,Detergent,C
+Groceries,Pasta,A
+Electronics,Monitor,D
+Groceries,Bread,D
+Household,Fan,C
+Personal Care,Face Wash,A
+Groceries,Sugar,D
+Groceries,Bread,A
+Electronics,Smartphone,C
+Groceries,Sugar,D
+Groceries,Salt,B
+Groceries,Salt,D
+Electronics,Monitor,C
+Groceries,Sugar,A
+Kitchen,Toaster,A
+Household,Bulb,C
+Electronics,Smartwatch,D
+Groceries,Pasta,A
+Kitchen,Toaster,D
+Personal Care,Shampoo,D
+Electronics,Monitor,B
+Household,Mop,D
+Household,Bulb,D
+Personal Care,Toothpaste,B
+Personal Care,Face Wash,A
+Groceries,Pasta,A
+Kitchen,Knife Set,C
+Electronics,Smartwatch,B
+Kitchen,Microwave,C
+Kitchen,Microwave,B
+Groceries,Rice,A
+Kitchen,Blender,B
+Electronics,Smartphone,A
+Groceries,Salt,D
+Groceries,Pasta,B
+Kitchen,Toaster,D
+Personal Care,Shampoo,B
+Kitchen,Knife Set,B
+Electronics,Laptop,C
+Kitchen,Pan,B
+Household,Detergent,D
+Electronics,Smartphone,B
+Kitchen,Blender,D
+Household,Toilet Paper,D
+Household,Bulb,B
+Kitchen,Knife Set,A
+Personal Care,Face Wash,D
+Electronics,Laptop,D
+Electronics,Tablet,C
+Personal Care,Toothpaste,C
+Kitchen,Microwave,B
+Groceries,Salt,D
+Household,Toilet Paper,D
+Household,Fan,A
+Household,Mop,A
+Household,Toilet Paper,C
+Personal Care,Lotion,C
+Personal Care,Lotion,A
+Kitchen,Refrigerator,A
+Kitchen,Knife Set,C
+Kitchen,Blender,D
+Electronics,Headphones,A
+Electronics,Monitor,A
+Electronics,Headphones,C
+Groceries,Vegetable Oil,B
+Groceries,Vegetable Oil,A
+Household,Detergent,B
+Electronics,Smartphone,C
+Kitchen,Pan,D
+Personal Care,Toothpaste,A
+Electronics,Monitor,D
+Personal Care,Lotion,A
+Household,Toilet Paper,D
+Groceries,Vegetable Oil,A
+Kitchen,Refrigerator,D
+Kitchen,Microwave,B
+Electronics,Tablet,C
+Kitchen,Toaster,C
+Kitchen,Blender,D
+Personal Care,Soap,D
+Household,Fan,C
+Electronics,Monitor,C
+Personal Care,Lotion,C
+Groceries,Sugar,C
+Groceries,Vegetable Oil,D
+Electronics,Smartphone,D
+Groceries,Bread,D
+Household,Fan,C
+Household,Fan,A
+Electronics,Smartphone,C
+Household,Detergent,D
+Kitchen,Refrigerator,B
+Electronics,Tablet,B
+Household,Milk,C
+Electronics,Tablet,D
+Electronics,Monitor,C
+Personal Care,Face Wash,A
+Groceries,Vegetable Oil,D
+Groceries,Vegetable Oil,A
+Household,Bulb,A
+Personal Care,Toothpaste,C
+Electronics,Smartphone,B
+Household,Detergent,B
+Groceries,Bread,C
+Kitchen,Blender,B
+Electronics,Smartwatch,A
+Groceries,Salt,B
+Household,Bulb,C
+Electronics,Monitor,B
+Household,Bulb,A
+Groceries,Bread,B
+Groceries,Pasta,C
+Personal Care,Shampoo,D
+Groceries,Pasta,C
+Personal Care,Shampoo,B
+Groceries,Pasta,B
+Personal Care,Lotion,D
+Household,Toilet Paper,C
+Personal Care,Shampoo,D
+Personal Care,Soap,B
+Kitchen,Pan,D
+Groceries,Sugar,C
+Household,Milk,B
+Personal Care,Face Wash,B
+Kitchen,Refrigerator,D
+Household,Detergent,B
+Personal Care,Conditioner,B
+Personal Care,Face Wash,C
+Kitchen,Toaster,B
+Groceries,Pasta,C
+Personal Care,Shampoo,B
+Kitchen,Blender,B
+Personal Care,Face Wash,C
+Household,Milk,D
+Personal Care,Conditioner,A
+Household,Milk,D
+Groceries,Salt,D
+Electronics,Tablet,B
+Groceries,Rice,A
+Personal Care,Face Wash,B
+Electronics,Laptop,C
+Electronics,Tablet,B
+Kitchen,Pan,D
+Kitchen,Pan,D
+Electronics,Smartwatch,A
+Personal Care,Toothpaste,A
+Personal Care,Shampoo,D
+Electronics,Laptop,A
+Groceries,Salt,A
+Electronics,Monitor,B
+Personal Care,Conditioner,A
+Personal Care,Lotion,B
+Personal Care,Lotion,A
+Electronics,Laptop,B
+Electronics,Smartphone,B
+Household,Toilet Paper,B
+Kitchen,Toaster,B
+Electronics,Tablet,C
+Kitchen,Refrigerator,D
+Electronics,Headphones,C
+Personal Care,Soap,A
+Electronics,Monitor,C
+Kitchen,Blender,A
+Household,Fan,B
+Kitchen,Refrigerator,D
+Kitchen,Knife Set,D
+Kitchen,Knife Set,B
+Personal Care,Face Wash,A
+Personal Care,Lotion,D
+Household,Toilet Paper,A
+Kitchen,Blender,A
+Household,Bulb,D
+Groceries,Bread,D
+Electronics,Monitor,C
+Electronics,Headphones,D
+Electronics,Headphones,D
+Electronics,Smartwatch,C
+Electronics,Laptop,A
+Groceries,Vegetable Oil,C
+Groceries,Vegetable Oil,C
+Groceries,Rice,B
+Personal Care,Soap,C
+Personal Care,Shampoo,B
+Household,Mop,D
+Personal Care,Soap,A
+Groceries,Vegetable Oil,A
+Groceries,Rice,D
+Groceries,Salt,A
+Household,Bulb,D
+Electronics,Laptop,C
+Electronics,Headphones,A
+Kitchen,Toaster,D
+Kitchen,Pan,B
+Personal Care,Toothpaste,B
+Electronics,Monitor,B
+Kitchen,Blender,B
+Household,Bulb,C
+Personal Care,Face Wash,B
+Personal Care,Face Wash,C
+Personal Care,Face Wash,B
+Household,Toilet Paper,D
+Personal Care,Conditioner,C
+Electronics,Headphones,C
+Kitchen,Microwave,B
+Household,Bulb,D
+Groceries,Rice,B
+Groceries,Sugar,B
+Household,Bulb,A
+Groceries,Pasta,B
+Electronics,Smartphone,A
+Groceries,Sugar,A
+Household,Detergent,C
+Household,Detergent,D
+Household,Toilet Paper,C
+Electronics,Smartwatch,D
+Kitchen,Blender,D
+Electronics,Monitor,C
+Kitchen,Microwave,A
+Electronics,Monitor,D
+Personal Care,Conditioner,B
+Kitchen,Blender,D
+Electronics,Smartphone,B
+Kitchen,Blender,D
+Electronics,Laptop,B
+Household,Mop,C
+Groceries,Salt,C
+Kitchen,Pan,C
+Household,Milk,C
+Household,Toilet Paper,C
+Kitchen,Toaster,A
+Household,Fan,B
+Kitchen,Pan,C
+Electronics,Laptop,D
+Household,Mop,D
+Personal Care,Face Wash,C
+Groceries,Pasta,D
+Personal Care,Toothpaste,D
+Kitchen,Pan,A
+Personal Care,Conditioner,D
+Household,Bulb,D
+Personal Care,Soap,B
+Groceries,Sugar,A
+Household,Toilet Paper,A
+Electronics,Smartwatch,C
+Household,Milk,C
+Kitchen,Refrigerator,B
+Groceries,Bread,D
+Household,Toilet Paper,B
+Personal Care,Shampoo,A
+Household,Detergent,D
+Personal Care,Lotion,B
+Personal Care,Conditioner,D
+Groceries,Salt,B
+Electronics,Monitor,D
+Personal Care,Conditioner,A
+Personal Care,Lotion,B
+Kitchen,Knife Set,C
+Household,Detergent,B
+Kitchen,Microwave,D
+Groceries,Pasta,C
+Personal Care,Shampoo,C
+Groceries,Rice,D
+Personal Care,Face Wash,C
+Kitchen,Pan,C
+Household,Toilet Paper,A
+Kitchen,Knife Set,B
+Household,Detergent,D
+Household,Detergent,D
+Household,Detergent,D
+Personal Care,Toothpaste,D
+Household,Milk,A
+Electronics,Smartphone,D
+Electronics,Tablet,A
+Household,Mop,A
+Electronics,Smartwatch,A
+Kitchen,Microwave,A
+Electronics,Smartwatch,B
+Electronics,Smartwatch,D
+Electronics,Smartphone,C
+Electronics,Headphones,C
+Kitchen,Blender,C
+Electronics,Tablet,D
+Electronics,Headphones,D
+Groceries,Rice,A
+Groceries,Salt,A
+Electronics,Headphones,C
+Electronics,Headphones,B
+Electronics,Laptop,D
+Household,Bulb,D
+Electronics,Tablet,C
+Household,Detergent,A
+Household,Toilet Paper,D
+Electronics,Smartphone,D
+Groceries,Salt,D
+Personal Care,Toothpaste,A
+Electronics,Smartphone,D
+Household,Detergent,B
+Kitchen,Refrigerator,D
+Kitchen,Blender,D
+Household,Bulb,A
+Kitchen,Pan,B
+Groceries,Rice,D
+Personal Care,Soap,B
+Kitchen,Pan,A
+Groceries,Sugar,A
+Kitchen,Toaster,A
+Household,Bulb,A
+Household,Mop,D
+Electronics,Smartphone,D
+Kitchen,Toaster,D
+Groceries,Bread,C
+Kitchen,Refrigerator,D
+Household,Fan,B
+Household,Mop,B
+Groceries,Sugar,D
+Household,Detergent,B
+Personal Care,Shampoo,C
+Household,Bulb,C
+Groceries,Sugar,D
+Electronics,Smartphone,A
+Kitchen,Pan,C
+Groceries,Salt,A
+Groceries,Vegetable Oil,B
+Electronics,Smartphone,D
+Electronics,Laptop,C
+Electronics,Smartphone,B
+Household,Milk,B
+Electronics,Smartphone,A
+Groceries,Sugar,B
+Household,Bulb,B
+Groceries,Bread,B
+Kitchen,Blender,A
