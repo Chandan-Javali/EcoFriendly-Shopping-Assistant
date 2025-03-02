@@ -1,65 +1,37 @@
 import streamlit as st
 import pandas as pd
 
-# Load data
 def load_data():
     try:
         df = pd.read_csv("eco_friendly_products.csv")
-        df.columns = df.columns.str.strip()  # Remove any unwanted spaces in column names
+        df.fillna("No Data", inplace=True)  # Avoid empty values breaking the UI
         return df
-    except FileNotFoundError:
-        st.error("Error: eco_friendly_products.csv file not found.")
-        return None
+    except Exception as e:
+        st.error(f"Error loading data: {e}")
+        return pd.DataFrame()
 
-df = load_data()
+def main():
+    st.set_page_config(page_title="Eco-Friendly Shopping Assistant", layout="wide")
+    st.title("🌱 Eco-Friendly Shopping Assistant")
 
-# UI Improvements - Dark theme and better layout
-st.set_page_config(page_title="Eco-Friendly Shopping Assistant", layout="wide")
-st.markdown(
-    """
-    <style>
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .stTextInput>div>div>input {
-            background-color: #333;
-            color: white;
-            border-radius: 8px;
-        }
-        .stSelectbox>div>div>select {
-            background-color: #333;
-            color: white;
-            border-radius: 8px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+    df = load_data()
+    if df.empty:
+        st.warning("No data available. Check your CSV file.")
+        return
 
-st.title("🌿 Eco-Friendly Shopping Assistant")
-
-if df is not None:
-    # Dropdown for category selection
-    categories = df['Category'].unique().tolist()
-    category = st.selectbox("Choose a Category:", ["All"] + categories)
-    
-    # Search box for product name
+    category = st.selectbox("Choose a Category:", options=df["Category"].unique())
     search_query = st.text_input("Search for a product:").strip().lower()
-    
-    # Filter data based on selection
-    if category != "All":
-        df_filtered = df[df['Category'] == category]
-    else:
-        df_filtered = df
-    
+
+    filtered_df = df[df["Category"] == category]
     if search_query:
-        df_filtered = df_filtered[df_filtered['Product Name'].str.lower().str.contains(search_query, na=False)]
-    
-    # Display results
-    if not df_filtered.empty:
-        st.dataframe(df_filtered[['Product Name', 'Brand', 'Price', 'Sustainability Score']])
+        filtered_df = filtered_df[filtered_df["Product"].str.lower().str.contains(search_query, na=False)]
+
+    if not filtered_df.empty:
+        st.write("### Matching Products")
+        st.dataframe(filtered_df[['Product', 'Price', 'Eco Score', 'Tip']])
     else:
         st.warning("No matching products found. Try another search term.")
+
+if __name__ == "__main__":
+    main()
 
