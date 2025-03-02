@@ -51,3 +51,4 @@ if st.session_state.product_name:
     else:
         st.error("❌ Not an eco-friendly choice.")
 
+
