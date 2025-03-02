@@ -6,7 +6,7 @@ from fuzzywuzzy import process
 
 # Load the dataset
 def load_data():
-    file_path = "eco_friendly_product_cleaned.csv"
+    file_path = "eco_friendly_products_full.csv"
     df = pd.read_csv(file_path)
     return df
 
