@@ -3,7 +3,7 @@ import pandas as pd
 
 # Load dataset
 def load_data():
-    return pd.read_csv("eco_friendly_products_expanded.csv")
+    return pd.read_csv("eco_friendly_products_updated.csv")
 
 def get_eco_score(category, product_name, df):
     filtered_df = df[(df["Category"] == category) & (df["Product Name"].str.lower() == product_name.lower())]
