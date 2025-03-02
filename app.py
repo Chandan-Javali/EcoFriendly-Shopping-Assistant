@@ -3,7 +3,7 @@ import pandas as pd
 
 # Load the dataset
 def load_data():
-    file_path = "/mnt/data/eco_friendly_products_full.csv"
+    file_path = "eco_friendly_products_full.csv"
     df = pd.read_csv(file_path)
     return df
 
