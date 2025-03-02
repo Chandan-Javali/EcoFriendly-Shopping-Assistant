@@ -3,12 +3,12 @@ import pandas as pd
 
 # Load dataset
 def load_data():
-    return pd.read_csv("eco_friendly_products_full.csv")  # Make sure this file includes "Eco Tips" column
+    return pd.read_csv("eco_friendly_products_full.csv")  # Ensure this file includes the "Tip" column
 
 def get_eco_details(category, product_name, df):
     filtered_df = df[(df["Category"] == category) & (df["Product Name"].str.lower() == product_name.lower())]
     if not filtered_df.empty:
-        return filtered_df.iloc[0]["Eco Score"], filtered_df.iloc[0]["Eco Tips"]
+        return filtered_df.iloc[0]["Eco Score"], filtered_df.iloc[0]["Tip"]  # Updated column name
     return "Not Found", "No sustainability tips available."
 
 # Streamlit UI
