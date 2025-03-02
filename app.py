@@ -1,21 +1,18 @@
 import streamlit as st
 import pandas as pd
 
-# Load product data
 def load_data():
-    return pd.read_csv("products.csv")
+    return pd.read_csv("products_updated_v2.csv")
 
-# Compute Eco Score
 def calculate_eco_score(row):
     return round((row['material_score'] * 0.4 + (10 - row['carbon_footprint']) * 0.5 + row['packaging'] * 0.1))
 
-# Streamlit UI
 st.set_page_config(page_title="EcoShop AI", layout="centered")
 st.title("🌱 EcoShop AI - Sustainable Shopping")
 st.write("Select a category, then search for a product.")
 
 data = load_data()
-categories = data['category'].unique().tolist()
+categories = sorted(data['category'].unique().tolist())
 categories.insert(0, "Select Category")
 
 selected_category = st.selectbox("Choose a Category:", categories)
@@ -23,7 +20,8 @@ selected_category = st.selectbox("Choose a Category:", categories)
 if selected_category != "Select Category":
     search_query = st.text_input("Search for a product:")
     if search_query:
-        filtered_products = data[(data['category'] == selected_category) & (data['product_name'].str.contains(search_query, case=False))]
+        filtered_products = data[(data['category'] == selected_category) & 
+                                 (data['product_name'].str.contains(search_query, case=False, na=False))]
         
         if not filtered_products.empty:
             for _, row in filtered_products.iterrows():
