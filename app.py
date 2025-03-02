@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 
 # Load the dataset
 def load_data():
-    file_path = "eco_friendly_products_full.csv"
+    file_path = "eco_friendly_product_full.csv"
     df = pd.read_csv(file_path)
     return df
 
