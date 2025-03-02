@@ -29,8 +29,8 @@ if "product_name" not in st.session_state:  # whats this session state you ask??
 # Product search input
 product_name = st.text_input("Enter Product Name", value=st.session_state.product_name, key="product_name_input")  #for people out there, text_input is basically input function or should i say its like scanf in c, i hope that makes sense (hopefully
 
-# Product dropdown (Moved Below Text Input)  sad news, this drop below not's working i dont know why but godknows why. i will keep it.
-available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
+# Product dropdown (Moved Below Text Input)
+available_products = df[df['Category'] == selected_category]['Product'].unique().tolist() # this is super important btw, here after selecting category it will show products only of that category , amazing isnt this? haha i thought so too, first time i put this into effect i had a huge list which had products of other category too, then i learnt you can use condition inside to make it targeted.
 selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
 
 # Sync text input with selected product - here to make sure that selected code appears even in enter product column, it may look like magic but who knew its just updating text lmfao
