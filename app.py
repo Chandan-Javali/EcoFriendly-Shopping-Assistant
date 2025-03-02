@@ -1,39 +1,31 @@
 import streamlit as st
 import pandas as pd
 
-# Load dataset
-@st.cache_data
+# Load data
 def load_data():
-    return pd.read_csv("eco_friendly_products.csv")
+    try:
+        return pd.read_csv("eco_friendly_products.csv")
+    except FileNotFoundError:
+        st.error("Error: The dataset file 'eco_friendly_products.csv' was not found. Please upload it or check the file path.")
+        return pd.DataFrame()
 
 df = load_data()
 
-# Streamlit UI
-st.title("🌱 Eco-Friendly Shopping Assistant")
+st.title("Eco-Friendly Shopping Assistant")
 
 # Select category
-category = st.selectbox("Choose a Category:", df["Category"].unique())
+category = st.selectbox("Choose a Category:", df["Category"].unique() if not df.empty else [])
 
-# Enter product name
-product_name = st.text_input("Search for a product:").strip()
+# Search bar for product name
+search_query = st.text_input("Search for a product:")
 
-# Display product details
-if product_name:
-    filtered_df = df[(df["Category"] == category) & (df["Product Name"].str.contains(product_name, case=False, na=False))]
+if search_query:
+    results = df[(df["Category"] == category) & (df["Product Name"].str.contains(search_query, case=False, na=False))]
     
-    if not filtered_df.empty:
-        for _, row in filtered_df.iterrows():
-            st.markdown(f"**Product:** {row['Product Name']}")
-            st.markdown(f"**Eco Score:** {row['Eco Score']}/10")
-            
-            # Sustainability Tip
-            if row['Eco Score'] >= 8:
-                tip = "Great choice! This product is highly eco-friendly. Consider repairing instead of replacing."
-            elif row['Eco Score'] >= 5:
-                tip = "This product has a moderate eco-score. Look for energy-efficient or recycled options."
-            else:
-                tip = "Low eco-score! Try to find alternatives with better sustainability ratings."
-            
-            st.info(tip)
+    if not results.empty:
+        for _, product in results.iterrows():
+            st.subheader(product["Product Name"])
+            st.write(f"**Eco Score:** {product['Eco Score']}/10")
+            st.write(f"**Sustainability Tip:** {product['Sustainability Tip']}")
     else:
-        st.warning("No matching products found. Try a different search.")
+        st.warning("No matching products found. Try another search term.")
