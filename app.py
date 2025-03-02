@@ -17,18 +17,23 @@ st.markdown("## Please select category")
 categories = df['Category'].unique().tolist()
 selected_category = st.selectbox("Select category", categories)
 
+# Initialize session state for product_name
+if "product_name" not in st.session_state:
+    st.session_state.product_name = ""
+
 # Product selection
 col1, col2 = st.columns([3, 2])
 with col1:
-    product_name = st.text_input("Product Name", placeholder="Type product name here...")
+    product_name = st.text_input("Product Name", st.session_state.product_name, placeholder="Type product name here...")
 
 with col2:
-    if st.button("🔍 Check Available Products", key="check_products"):
-        available_products = df[df['Category'] == selected_category]['Product Name'].unique().tolist()
-        selected_product = st.selectbox("Available Products", available_products, key="available_products")
+    available_products = df[df['Category'] == selected_category]['Product Name'].unique().tolist()
+    selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
 
-        # Auto-fill product name field
-        product_name = selected_product
+    # Update text input when a product is selected
+    if selected_product:
+        st.session_state.product_name = selected_product
+        st.rerun()
 
 # Display the eco score
 def get_eco_score(product):
@@ -37,9 +42,9 @@ def get_eco_score(product):
         return row.iloc[0]['Eco Score']
     return "Not Found"
 
-if product_name:
-    eco_score = get_eco_score(product_name)
-    st.markdown(f"🌍 **The eco score for {product_name} is: {eco_score}**")
+if st.session_state.product_name:
+    eco_score = get_eco_score(st.session_state.product_name)
+    st.markdown(f"🌍 **The eco score for {st.session_state.product_name} is: {eco_score}**")
     if eco_score in ["A", "B"]:
         st.success("✅ Excellent eco-friendly choice!")
     else:
