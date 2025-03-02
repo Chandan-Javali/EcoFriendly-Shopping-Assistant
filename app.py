@@ -32,12 +32,13 @@ with col1:
 
 with col2:
     available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
-    selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
+    selected_product = st.selectbox("Available Products", ["Select a product"] + available_products, key="available_products")
 
 # Sync text input with selected product and fuzzy matching
-if selected_product:
-    st.session_state.product_name = selected_product
-    st.session_state.product_name = selected_product # Update text input
+if selected_product and selected_product != "Select a product":
+    st.session_state.product_name = selected_product  # Update text input when product is selected
+    st.experimental_rerun()
+
 elif product_name:
     best_match, score = process.extractOne(product_name, df['Product'].tolist(), scorer=fuzz.token_sort_ratio)
     if score >= 70:  # Adjust threshold as needed
@@ -66,27 +67,35 @@ if st.session_state.product_name:
 
     # Plotting
     fig = go.Figure(go.Indicator(
-        mode = "gauge+number",
-        value = int(eco_score) if eco_score.isdigit() else 0, # convert score to int if possible
-        domain = {'x': [0, 1], 'y': [0, 1]},
-        title = {'text': "Selected Product Eco-Score"},
-        gauge = {'axis': {'range': [None, 5]},
-                 'bar': {'color': "darkblue"},
-                 'steps' : [
-                     {'range': [0, 2], 'color': "lightgreen"},
-                     {'range': [2, 3], 'color': "yellow"},
-                     {'range': [3, 5], 'color': "red"}]}))
+        mode="gauge+number",
+        value=int(eco_score) if str(eco_score).isdigit() else 0,
+        domain={'x': [0, 1], 'y': [0, 1]},
+        title={'text': "Selected Product Eco-Score"},
+        gauge={
+            'axis': {'range': [None, 5]},
+            'bar': {'color': "darkblue"},
+            'steps': [
+                {'range': [0, 2], 'color': "lightgreen"},
+                {'range': [2, 3], 'color': "yellow"},
+                {'range': [3, 5], 'color': "red"}
+            ]
+        }
+    ))
     st.plotly_chart(fig)
 
     fig_ideal = go.Figure(go.Indicator(
-        mode = "gauge+number",
-        value = 1, # Ideal eco score is 1
-        domain = {'x': [0, 1], 'y': [0, 1]},
-        title = {'text': "Ideal Eco-Score"},
-        gauge = {'axis': {'range': [None, 5]},
-                 'bar': {'color': "darkblue"},
-                 'steps' : [
-                     {'range': [0, 2], 'color': "lightgreen"},
-                     {'range': [2, 3], 'color': "yellow"},
-                     {'range': [3, 5], 'color': "red"}]}))
+        mode="gauge+number",
+        value=1,  # Ideal eco score is 1
+        domain={'x': [0, 1], 'y': [0, 1]},
+        title={'text': "Ideal Eco-Score"},
+        gauge={
+            'axis': {'range': [None, 5]},
+            'bar': {'color': "darkblue"},
+            'steps': [
+                {'range': [0, 2], 'color': "lightgreen"},
+                {'range': [2, 3], 'color': "yellow"},
+                {'range': [3, 5], 'color': "red"}
+            ]
+        }
+    ))
     st.plotly_chart(fig_ideal)
