@@ -2,43 +2,30 @@ import streamlit as st
 import pandas as pd
 
 def load_data():
-    return pd.read_csv("products_updated_v2.csv")
+    return pd.read_csv("structured_products.csv")
 
 def calculate_eco_score(row):
-    return round((row['Material Score'] * 0.4 + (10 - row['Carbon Footprint']) * 0.5 + row['Packaging'] * 0.1))
+    return round((row['material_score'] * 0.4 + (10 - row['carbon_footprint']) * 0.5 + row['packaging'] * 0.1))
 
-st.set_page_config(page_title="EcoShop AI", layout="centered")
-st.title("🌱 EcoShop AI - Sustainable Shopping")
+df = load_data()
+
+st.title("🌱 Eco-Friendly Shopping")
 st.write("Select a category, then search for a product.")
 
-data = load_data()
-categories = sorted(data['Category'].unique().tolist())
-categories.insert(0, "Select Category")
+# Adjusting category selection to appear below
+selected_category = st.selectbox("Choose a Category:", df['category'].unique(), index=0, key="category_selector")
 
-selected_category = st.selectbox("Choose a Category:", categories)
+search_query = st.text_input("Search for a product:")
+filtered_df = df[(df['category'] == selected_category) & (df['product_name'].str.contains(search_query, case=False, na=False))]
 
-if selected_category != "Select Category":
-    search_query = st.text_input("Search for a product:")
-    if search_query:
-        filtered_products = data[(data['Category'] == selected_category) & 
-                                 (data['Product Name'].str.contains(search_query, case=False, na=False))]
-        
-        if not filtered_products.empty:
-            for _, row in filtered_products.iterrows():
-                eco_score = calculate_eco_score(row)
-                tip = "🌍 Great choice!" if eco_score >= 8 else "♻️ Decent option." if eco_score >= 5 else "⚠️ Consider a greener choice."
-                
-                st.markdown(f"""
-                <div style='background:#1e1e1e;padding:15px;border-radius:10px;margin-top:10px;'>
-                    <h3>{row['Product Name']}</h3>
-                    <p style='color:#4CAF50;font-size:1.5rem;font-weight:bold;'>Eco Score: {eco_score}/10</p>
-                    <p><strong>Material Score:</strong> {row['Material Score']}</p>
-                    <p><strong>Carbon Footprint:</strong> {row['Carbon Footprint']}</p>
-                    <p><strong>Packaging:</strong> {row['Packaging']}</p>
-                    <p><strong>Tip:</strong> {tip}</p>
-                </div>
-                """, unsafe_allow_html=True)
-        else:
-            st.warning("No products found. Try another search!")
+if not filtered_df.empty:
+    for _, row in filtered_df.iterrows():
+        eco_score = calculate_eco_score(row)
+        st.subheader(row['product_name'])
+        st.write(f"**Category:** {row['category']}")
+        st.write(f"**Eco Score:** {eco_score}/10")
+        st.write(f"**Sustainability Tip:** {row['tip']}")
+else:
+    st.write("No products found. Try another search!")
 
 
