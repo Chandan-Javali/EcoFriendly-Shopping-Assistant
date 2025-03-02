@@ -24,15 +24,12 @@ selected_category = st.selectbox("Select category", categories)
 if "product_name" not in st.session_state:
     st.session_state.product_name = ""
 
-# Product selection layout
-col1, col2 = st.columns([3, 2])
+# Product search input
+product_name = st.text_input("Enter Product Name", value=st.session_state.product_name, key="product_name_input")
 
-with col1:
-    product_name = st.text_input("Enter Product Name", value=st.session_state.product_name, key="product_name_input")
-
-with col2:
-    available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
-    selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
+# Product dropdown (Moved Below Text Input)
+available_products = df[df['Category'] == selected_category]['Product'].unique().tolist()
+selected_product = st.selectbox("Available Products", [""] + available_products, key="available_products")
 
 # Sync text input with selected product
 if selected_product:
